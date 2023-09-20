@@ -24,7 +24,7 @@ export default function App() {
   }
 
   useEffect(() => {
-    setTimeout(change, 1000);
+    appNum === 0 && setTimeout(change, 1000);
   }, []);
 
   return (
@@ -33,9 +33,9 @@ export default function App() {
       {appNum === 0 ? (
         <Page pageNum={appNum} loading={loading} onChange={change} />
       ) : null}
-      {appNum === 1 ? <SubApp loading={loading} /> : null}
+      {appNum === 1 ? <SubApp /> : null}
       {appNum === 2 ? <SubApp2 /> : null}
-      {appNum > 2 ? (
+      {appNum >= 2 ? (
         <Page pageNum={appNum} loading={loading} onChange={change} />
       ) : (
         <iframe
