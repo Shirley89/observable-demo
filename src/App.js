@@ -10,6 +10,8 @@ import Page from "./Page";
 import SubApp from "./SubApp";
 import SubApp2 from "./SubApp2";
 
+const appNum = +window.location.pathname.split("/")[1] || 0;
+
 export default function App() {
   const [loading, setLoading] = useState(false);
 
@@ -27,12 +29,24 @@ export default function App() {
 
   return (
     <div className="App">
-      <Welcome />
-      <Page loading={loading} onChange={change} />
-      <SubApp loading={loading} />
-      <SubApp2 />
-      {/* <>pathname: {window.location.pathname}</> */}
-      <iframe key="subapp" title="self" src="https://demo.shirley89.com/" />
+      {appNum === 0 ? <Welcome /> : null}
+      {appNum === 0 ? <Page loading={loading} onChange={change} /> : null}
+      {appNum === 1 ? <SubApp loading={loading} /> : null}
+      {appNum === 2 ? <SubApp2 /> : null}
+      {appNum !== 0 ? <Page loading={loading} onChange={change} /> : null}
+      {/* <>
+        <br />
+        appNum: {appNum}
+        <br />
+        next appNum: {appNum + 1}
+      </> */}
+      {appNum >= 3 ? null : (
+        <iframe
+          key="subapp"
+          title={`self-${appNum}`}
+          src={`https://demo.shirley89.com/${appNum + 1}`}
+        />
+      )}
     </div>
   );
 }

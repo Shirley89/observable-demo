@@ -3,6 +3,10 @@
   text-align: center;
 }
 
+button {
+  margin: 20px 10%;
+}
+
 iframe {
   width: 90%;
   height: 700px;
