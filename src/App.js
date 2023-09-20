@@ -33,14 +33,7 @@ export default function App() {
       {appNum === 0 ? <Page loading={loading} onChange={change} /> : null}
       {appNum === 1 ? <SubApp loading={loading} /> : null}
       {appNum === 2 ? <SubApp2 /> : null}
-      {appNum !== 0 ? <Page loading={loading} onChange={change} /> : null}
-      {/* <>
-        <br />
-        appNum: {appNum}
-        <br />
-        next appNum: {appNum + 1}
-      </> */}
-      {appNum >= 3 ? null : (
+      {appNum > 2 ? null : (
         <iframe
           key="subapp"
           title={`self-${appNum}`}
