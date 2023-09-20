@@ -30,11 +30,13 @@ export default function App() {
   return (
     <div className="App">
       {appNum === 0 ? <Welcome /> : null}
-      {appNum === 0 ? <Page loading={loading} onChange={change} /> : null}
+      {appNum === 0 ? (
+        <Page pageNum={appNum} loading={loading} onChange={change} />
+      ) : null}
       {appNum === 1 ? <SubApp loading={loading} /> : null}
       {appNum === 2 ? <SubApp2 /> : null}
       {appNum > 2 ? (
-        <Page loading={loading} onChange={change} />
+        <Page pageNum={appNum} loading={loading} onChange={change} />
       ) : (
         <iframe
           key="subapp"
