@@ -15,8 +15,6 @@ export default function Page({ pageNum, loading, onChange }) {
     <button key="btn" disabled={loading} onClick={onChange}>
       {!isParentPage && loading ? "正在切换" : "切换账号"}
     </button>,
-    !isParentPage ? (
-      <p key="tip">【切换完成后会广播同时更新本页数据】</p>
-    ) : null,
+    isParentPage ? null : <p key="tip">【切换完成后会广播同时更新本页数据】</p>,
   ];
 }
