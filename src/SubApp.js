@@ -24,7 +24,7 @@ export default function SubApp(props) {
   return [
     <h2 key="title">子应用1内容：</h2>,
     <p key="name">Signed User: {props.loading ? "loading..." : user.name}</p>,
-    <p key="character">Email: {props.loading ? "loading..." : user.email}</p>,
+    <p key="email">Email: {props.loading ? "loading..." : user.email}</p>,
     <button key="button" onClick={handleLogout}>
       登出账号
     </button>,

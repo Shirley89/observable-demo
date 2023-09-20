@@ -5,9 +5,10 @@ import { useEffect, useState } from "react";
 import { storeUser } from "./observables/user";
 import { getUserData } from "./mock/user";
 
+import Welcome from "./Welcome";
+import Page from "./Page";
 import SubApp from "./SubApp";
 import SubApp2 from "./SubApp2";
-import Page from "./Page";
 
 export default function App() {
   const [loading, setLoading] = useState(false);
@@ -26,10 +27,12 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
+      <Welcome />
       <Page loading={loading} onChange={change} />
       <SubApp loading={loading} />
       <SubApp2 />
+      {/* <>pathname: {window.location.pathname}</> */}
+      <iframe key="subapp" title="self" src="https://demo.shirley89.com/" />
     </div>
   );
 }
