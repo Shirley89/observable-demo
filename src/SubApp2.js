@@ -13,7 +13,7 @@ export default function SubApp() {
 
   return [
     <h2 key="title">子应用2内容：</h2>,
-    <p key="name">通道获取的用户ID：{user.id}</p>,
-    // <iframe key="subapp" title="self" src="https://wrtcwv.csb.app/" />
+    <p key="name">通道获取的用户ID【这是实时变化的】：{user.id}</p>,
+    <iframe key="subapp" title="self" src="https://demo.shirley89.com/" />,
   ];
 }

@@ -5,10 +5,10 @@ import { storeUser } from "./observables/user";
 
 import { getLogoutUserData } from "./mock/user";
 
-export default function SubApp() {
+export default function SubApp(props) {
   const [user, setUser] = useState({
     name: "subapp-default-value",
-    email: "subapp-default-value"
+    email: "subapp-default-value",
   });
 
   const handleLogout = () => {
@@ -23,10 +23,10 @@ export default function SubApp() {
 
   return [
     <h2 key="title">子应用1内容：</h2>,
-    <p key="name">Signed User: {user.name}</p>,
-    <p key="character">Email: {user.email}</p>,
+    <p key="name">Signed User: {props.loading ? "loading..." : user.name}</p>,
+    <p key="character">Email: {props.loading ? "loading..." : user.email}</p>,
     <button key="button" onClick={handleLogout}>
       登出账号
-    </button>
+    </button>,
   ];
 }

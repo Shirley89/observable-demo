@@ -28,8 +28,8 @@ export default function App() {
     <div className="App">
       <h1>Hello CodeSandbox</h1>
       <Page loading={loading} onChange={change} />
-      <SubApp />
-      {loading ? <h2>loading...</h2> : <SubApp2 />}
+      <SubApp loading={loading} />
+      <SubApp2 />
     </div>
   );
 }
